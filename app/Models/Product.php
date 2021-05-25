@@ -9,6 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
+    //defino los balores del campo status
+    const BORRADOR = 1;
+    const PUBLICADO = 2;
+
     protected $guarded = ['id','created_at','updated_at'];
 
     //relacion 1:M 
