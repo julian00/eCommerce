@@ -25,13 +25,13 @@ class Product extends Model
 
     public function subcategory()
     {
-        return $this->belongsTo(subcategory::class);
+        return $this->belongsTo(Subcategory::class);
     }
 
     //relacion M:M 
     public function colors()
     {
-        return $this->belongsToMany(colors::class);
+        return $this->belongsToMany(Color::class);
     }
 
     //relacion 1:M polimorfica

@@ -22,7 +22,8 @@ class BrandFactory extends Factory
     public function definition()
     {
         return [
-            //
+            //completo el campo name con una palabra
+            'name' => $this->faker->word()
         ];
     }
 }

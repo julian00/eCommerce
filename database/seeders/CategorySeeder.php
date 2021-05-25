@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Models\Category;
@@ -45,7 +46,15 @@ class CategorySeeder extends Seeder
 
         foreach ($categories as $category) 
         {
-            Category::factory(1) -> create($category);
+            //modelo Categories -> brand_category -> brands
+            $category = Category::factory(1) -> create($category) -> first();
+            $brands = Brand::factory(4) -> create();
+
+            foreach ($brands as $brand) 
+            {
+                //recupero la relacion con categories
+                $brand->categories()->attach($category->id);
+            }
         }
     }
 }
