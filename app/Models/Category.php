@@ -27,6 +27,6 @@ class Category extends Model
     //relacion 1:M a travez de otra relacion categories-subcategories-products
     public function products()
     {
-        return $this->hasManyThrough(Product::class,subcategories::class);
+        return $this->hasManyThrough(Product::class,SubCategory::class);
     }
 }

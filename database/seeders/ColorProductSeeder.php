@@ -17,7 +17,7 @@ class ColorProductSeeder extends Seeder
     public function run()
     {
         //me trae los productos que tienen TRUE en color y FALSE en size
-        $products = Product::whereHas('subcategory', function(Builder $query){
+        $products = Product::whereHas('sub_category', function(Builder $query){
             $query->where('color', true)
                     ->where('size',false);
         })->get();
