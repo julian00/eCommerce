@@ -1,9 +1,12 @@
 <div>
     <div class="glider-contain">
         <ul class="glider">
-          @foreach ($category->subcategories as $product)    
-            <li>
-                {{$product}}
+          @foreach ($category->products as $product)    
+            <li class="bg-white rounded-lg shadow">
+              <figure>
+                {{--<img src="{{ Storage::url($product->images->first()->url) }}" alt="">--}}
+              </figure>
+                {{$product->images->url}}
             </li>
           @endforeach
         </ul>

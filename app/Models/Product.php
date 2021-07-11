@@ -42,6 +42,6 @@ class Product extends Model
     public function images()
     {
                             //clase       , metodo
-        return $this->morphTo(Image::class, 'imageable');
+        return $this->morphTo(Image::class, "imageable");
     }
 }
