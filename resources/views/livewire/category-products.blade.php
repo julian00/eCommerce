@@ -5,8 +5,8 @@
             <li class="bg-white rounded-lg shadow">
               <figure>
                 {{--<img src="{{ Storage::url($product->images->first()->url) }}" alt="">--}}
+                imagen
               </figure>
-                {{$product->images->url}}
             </li>
           @endforeach
         </ul>

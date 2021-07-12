@@ -15,8 +15,11 @@
         </ul>
     </div>
     <div class="col-span-3">
-        {{Storage::url($category->image)}}
-        <img class="h-64 w-full object-cover object-center" src="/storage/categories/e7f45245fe57016e115f675b7d23f582.png" alt="">
-        <img class="h-64 w-full object-cover object-center" src="{{Storage::url($category->image)}}" alt="">
+        @php
+            $url= Str::substr(Storage::url($category->image), 21)
+        @endphp
+
+        <img class="h-64 w-full object-cover object-center" src="{{$url}}" alt="">
+        {{--<img class="h-64 w-full object-cover object-center" src="{{Storage::url($category->image)}}" alt="">--}}
     </div>
 </div>
