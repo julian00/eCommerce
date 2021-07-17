@@ -1,5 +1,5 @@
 
-<header class="bg-trueGray-700 sticky top-0" x-data="{ open: false }">
+<header class="bg-trueGray-700 sticky top-0 z-50" x-data="{ open: false }">
     <div class="container flex items-center h-16 justify-between md:justify-items-start">
         <a  :class="{'bg-opacity-100 text-orange-500' : open}" {{--clase dinamica--}}
             x-on:click="open = !open"

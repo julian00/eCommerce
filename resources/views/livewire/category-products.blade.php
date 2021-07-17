@@ -1,7 +1,7 @@
 <div wire:init="loadPosts">
   @if (count($products))
     <div class="glider-contain">
-      <ul class="glider">
+      <ul class="glider-{{$category->id}}">
         @foreach ($products as $product)   
                                                       {{--pregunto si es la ultima iteracion--}} 
           <li class="bg-white rounded-lg shadow mr-4 {{ $loop->last ? '' : 'mr-4' }}">
