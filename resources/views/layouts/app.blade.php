@@ -70,6 +70,8 @@
                 }
             }
         </script>
+        {{--ejecuto el script del spiner de carga de imagenes al final para que se vea mejor--}}
+        @stack('script')
 
     </body>
 </html>

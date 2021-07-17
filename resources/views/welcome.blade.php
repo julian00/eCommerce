@@ -8,17 +8,22 @@
         </section>
     </div>
 
-    <script>
-        new Glider(document.querySelector('.glider'), {
-            slidesToScroll: 1,
-            slidesToShow: 5.5,
-            draggable: true,
-            dots: '.dots',
-            arrows: {
-                prev: '.glider-prev',
-                next: '.glider-next'
-            }
-        });
-    </script>
+    {{-- ejecuto el script al final del layout app en la etiqueta stack --}}
+    @push('script')
+        <script>
+            Livewire.on('glider', function() {
+                new Glider(document.querySelector('.glider'), {
+                    slidesToScroll: 1,
+                    slidesToShow: 5.5,
+                    draggable: true,
+                    dots: '.dots',
+                    arrows: {
+                        prev: '.glider-prev',
+                        next: '.glider-next'
+                    }
+                });
+            });
+        </script>
+    @endpush
 
 </x-app-layout>
