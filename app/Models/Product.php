@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    //defino los balores del campo status
+    //defino los valores del campo status
     const BORRADOR = 1;
     const PUBLICADO = 2;
 

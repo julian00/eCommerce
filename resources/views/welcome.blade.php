@@ -16,14 +16,27 @@
         <script>
             Livewire.on('glider', function(id) {
                 new Glider(document.querySelector('.glider-' + id), {
+                    slidesToShow: 1,
                     slidesToScroll: 1,
-                    slidesToShow: 5.5,
                     draggable: true,
-                    dots: '.dots',
+                    dots: '.glider-' + id + '~ .dots',
                     arrows: {
-                        prev: '.glider-prev',
-                        next: '.glider-next'
-                    }
+                        prev: '.glider-' + id + '~ .glider-prev',
+                        next: '.glider-' + id + '~ .glider-next'
+                    },
+                    responsive: [
+                                {
+                                // screens greater than >= 640px
+                                breakpoint: 640,
+                                settings: {
+                                    // Set to `auto` and provide item width to adjust to viewport
+                                    slidesToShow: 'auto',
+                                    slidesToScroll: 'auto',
+                                    itemWidth: 150,
+                                    duration: 0.25
+                                }
+                                },
+                    ]
                 });
             });
         </script>
