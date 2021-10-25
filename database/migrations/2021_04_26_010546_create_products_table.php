@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity')->nullable();
 
           //$table->enum('status',[1,2]);//1->borrador 2->publicado
-            $table->enum('satus',[Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
+            $table->enum('status',[Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
 
             $table->unsignedBigInteger('sub_category_id');
             $table->foreign('sub_category_id')->references('id')->on('sub_categories');

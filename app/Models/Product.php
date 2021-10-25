@@ -22,7 +22,7 @@ class Product extends Model
     }
 
     //relacion 1:M inversa
-    public function brands()
+    public function brand()
     {
         return $this->belongsTo(Brand::class);
     }
