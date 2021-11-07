@@ -44,4 +44,10 @@ class Product extends Model
                             //clase       , metodo
         return $this->morphTo(Image::class, "imageable");
     }
+
+    //URL amigables
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

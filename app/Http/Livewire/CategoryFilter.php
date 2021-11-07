@@ -14,7 +14,7 @@ class CategoryFilter extends Component
     
     //defino la variable para obtenes la informacion en la vista
     public $category, $subcategoria, $marca;
-    public $view = "list";
+    public $view = "grid";
 
     public function clear()
     {
