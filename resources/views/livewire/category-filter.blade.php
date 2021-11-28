@@ -53,11 +53,9 @@
                     <li class="bg-white rounded-lg shadow mr-4 mb-4 gap-4">
                         <article>
                             <figure>
-                                imagen
-                                {{--@php
-                                    $url= Str::substr(Storage::url($product->image), 21)
+                                @php
+                                    $url= Str::substr(Storage::url($product->images->first()->url), 21)
                                 @endphp
-                                {{$url}}
                                 
                                 <img class="h-48 w-full object-cover object-center" src="{{$url}}" alt="">
                             {{--<img class="h-48 w-full object-cover object-center" src="{{ Storage::url($product->images->first()->url) }}" alt="">--}}
@@ -81,7 +79,11 @@
                         <li class="bg-white rounded-lg shadow mb-4">
                             <article class="flex">
                                 <figure>
-                                    imagen
+                                    @php
+                                        $url= Str::substr(Storage::url($product->images->first()->url), 21)
+                                    @endphp
+                                    
+                                    <img class="h-48 w-full object-cover object-center" src="{{$url}}" alt="">
                                     {{--<img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($product->images->first()->url)}}" alt="">--}}
                                 </figure>
 

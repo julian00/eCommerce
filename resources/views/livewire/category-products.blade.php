@@ -7,13 +7,12 @@
           <li class="bg-white rounded-lg shadow mr-4 {{ $loop->last ? '' : 'sm:mr-4' }}">
             <article>
                 <figure>
-                  {{--@php
+                  @php
                     $url= Str::substr(Storage::url($product->images->first()->url), 21)
                   @endphp
                   <img class="h-48 w-full object-cover object-center" src="{{ $url }}" alt="">
-                  {{$url}}
                   {{--<img class="h-48 w-full object-cover object-center" src="{{ Storage::url($product->images->first()->url) }}" alt="">--}}
-                  imagen
+                  
                 </figure>
 
                 <div class="py-4 px-6">

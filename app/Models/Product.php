@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,7 +43,7 @@ class Product extends Model
     public function images()
     {
                             //clase       , metodo
-        return $this->morphTo(Image::class, "imageable");
+        return $this->morphMany(Image::class, "imageable");
     }
 
     //URL amigables
