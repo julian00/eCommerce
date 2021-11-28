@@ -34,7 +34,7 @@
                         <div class="ml-4">
                             <p class="text-lg font-semibold text-greenLime-500">Se hacen envios a todo el pais</p>
                             {{--now() devuelve la fecha y hora actual--}}
-                            <p>Resivelo el {{ now()->addDay(7)->format('l j F') }}</p>
+                            <p>Recibelo el {{ Date::now()->addDay(7)->locale('es')->format('l j F') }}</p>
                         </div>
                     </div>
                 </div>
