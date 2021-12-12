@@ -16,6 +16,8 @@ class Product extends Model
 
     protected $guarded = ['id','created_at','updated_at'];
 
+    
+
     //relacion 1:M 
     public function sizes()
     {
