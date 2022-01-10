@@ -12,7 +12,7 @@ class CategoryProducts extends Component
     public function loadPosts()
     {
         //traigo los productos que solo tienen el status 2
-        $this->products = $this->category->products()->where('satus', 2)->take(10)->get();
+        $this->products = $this->category->products()->where('status', 2)->take(10)->get();
         $this->emit('glider',$this->category->id);
     }
     

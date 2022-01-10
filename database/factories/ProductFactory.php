@@ -51,7 +51,7 @@ class ProductFactory extends Factory
             'sub_category_id' => $subcategory->id,
             'brand_id' => $brand->id,
             'quantity' => $quantity,
-            'satus' => 2,
+            'status' => 2,
 
         ];
     }
