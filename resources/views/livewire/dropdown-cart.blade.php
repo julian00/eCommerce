@@ -10,9 +10,26 @@
         </x-slot>
 
         <x-slot name="content">
-            <div class="px-4 py-6">
-                <p class="text-center text-gray-700">No hay ningun item agregado</p>
-            </div>
+            <ul>
+                @forelse (Cart::content() as $item)
+                    <li class="flex">
+                        @php
+                            $url= Str::substr($item->options->image, 21);  
+                        @endphp
+                        <img class="h-15 w-20 object-cover mr-4" src="{{$url}}" alt="">
+                        
+                        <article class="flex-1">
+                            <h1 class="font-bold">{{ $item->name }}</h1>
+                            <p>Cant: {{$item->qty }}</p>
+                            <p>U$S {{$item->price}}</p>
+                        </article>
+                    </li>
+                @empty         
+                    <li class="px-4 py-6">
+                        <p class="text-center text-gray-700">No hay ningun item agregado</p>
+                    </li>
+                @endforelse
+            </ul>
         </x-slot>
     </x-jet-drpdown>
 </div>
