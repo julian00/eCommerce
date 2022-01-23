@@ -12,7 +12,7 @@
         <x-slot name="content">
             <ul>
                 @forelse (Cart::content() as $item)
-                    <li class="flex">
+                    <li class="flex p-2 border-b border-gray-200">
                         @php
                             $url= Str::substr($item->options->image, 21);  
                         @endphp
@@ -21,7 +21,7 @@
                         <article class="flex-1">
                             <h1 class="font-bold">{{ $item->name }}</h1>
                             <p>Cant: {{$item->qty }}</p>
-                            <p>U$S {{$item->price}}</p>
+                            <p>$ {{$item->price}}</p>
                         </article>
                     </li>
                 @empty         
@@ -30,6 +30,18 @@
                     </li>
                 @endforelse
             </ul>
+
+            @if (Cart::count())
+                <div class="py-2 px-3">
+                    <p class="text-lg text-gray-700 mt-2 mb-3">
+                        <span class="font-bold">Total $ </span>
+                        {{ Cart::subtotal() }}
+                    </p>
+                    <x-button-enlace color="orange" class="w-full">
+                        ir al carrito de compras
+                    </x-button-enlace>
+                </div>
+            @endif
         </x-slot>
     </x-jet-drpdown>
 </div>
