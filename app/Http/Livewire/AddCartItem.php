@@ -37,6 +37,8 @@ class AddCartItem extends Component
                     'weight' => 550,
                     'options' => $this->options
                 ]);
+        //emito un evento para que ejecute el metodo render del componente y se actualize cuando agrego al carrito
+        $this->emitTo('dropdown-cart','render');
     }
 
     public function render()
