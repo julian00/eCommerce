@@ -31,6 +31,10 @@
                                 @isset($item->options['color'])
                                     <p class="mx-2">Color: {{__($item->options['color'])}}</p>
                                 @endisset
+
+                                @isset($item->options['size'])
+                                    <p>{{$item->options['size']}}</p>
+                                @endisset
                             </div>
                             
                             <p>$ {{$item->price}}</p>
