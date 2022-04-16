@@ -16,7 +16,26 @@ class Product extends Model
 
     protected $guarded = ['id','created_at','updated_at'];
 
-    
+    //accesores
+    public function getStockAttribute()
+    {
+        if ($this->sub_category->size) 
+        {
+            return Colorsize::whereHas('size.product', function(Builder $query){
+                $query->where('id',$this->id);
+            })->sum('quantity');
+        }
+        elseif($this->sub_category->color)
+        {
+          return ColorProduct::whereHas('product', function(Builder $query){
+              $query->where('id',$this->id);
+          })->sum('quantity');  
+        }
+        else
+        {
+            return $this->quantity;
+        }
+    }    
 
     //relacion 1:M 
     public function sizes()

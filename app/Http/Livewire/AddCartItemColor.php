@@ -28,8 +28,11 @@ class AddCartItemColor extends Component
         public function updatedColorId($value)
         {
             $color = $this->product->colors->find($value);
+
             //con el metodo pivot accedo a la tabla intermedia color-product
-            $this->quantity = $color->pivot->quantity;
+            //$this->quantity = $color->pivot->quantity;
+            $this->quantity = qty_available($this->product->id,$color->id);
+
             $this->options['color'] = $color->name;
         }
 
@@ -52,6 +55,9 @@ class AddCartItemColor extends Component
                     'weight' => 550,
                     'options' => $this->options
                 ]);
+        
+        $this->quantity = qty_available($this->product->id, $this->color_id);
+        $this->reset('qty');
         //emito un evento para que ejecute el metodo render del componente y se actualize cuando agrego al carrito
         $this->emitTo('dropdown-cart','render');
     }

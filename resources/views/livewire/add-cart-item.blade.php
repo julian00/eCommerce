@@ -1,8 +1,8 @@
 <div x-data> {{-- con x-data inicio las funcionalidades de alpine --}}
-
+    
     <p class="text-gray-700 mb-4">
         <span class="font-semibold text-lg">Stock disponible: </span>
-        {{ $quantity }}
+        {{ $quantity }}    
     </p>
 
     <div class="flex">
@@ -22,7 +22,8 @@
             </x-jet-secondary-button>
         </div>
         <div class="flex-1">
-            <x-button color="orange" class="w-full" 
+            <x-button color="orange" class="w-full"
+                    x-bind:disabled="$wire.quantity<=0" 
                     wire:click="addItem"
                     wire:loading.attr="disabled"
                     wire:target="addItem">
