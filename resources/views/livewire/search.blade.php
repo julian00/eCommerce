@@ -1,10 +1,12 @@
 <div class="flex-1 relative" x-data>
-    <x-jet-input wire:model="search" type="text" class="w-full" placeholder="Buscar..."/>
+    <form action="{{ route('search') }}" autocomplete="off">
+        <x-jet-input name="name"  wire:model="search" type="text" class="w-full" placeholder="Buscar..."/>
 
-    <button class="absolute top-0 right-0 w-12 h-full bg-orange-500 flex items-center justify-center rounded-r-md">
-        {{--llamo a un componente anonimo y le paso los valores de alto y ancho--}}
-        <x-search size="35" color="white"/>
-    </button>
+        <button class="absolute top-0 right-0 w-12 h-full bg-orange-500 flex items-center justify-center rounded-r-md">
+            {{--llamo a un componente anonimo y le paso los valores de alto y ancho--}}
+            <x-search size="35" color="white"/>
+        </button>
+    </form>
 
     <div class="absolute w-full">                                                           <!--click fuera del componente con alpine-->
         <div class="bg-white rounded-lg shadow mt-1 hidden" :class="{ 'hidden' : !$wire.open}" @click.away="$wire.open = false">
